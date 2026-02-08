@@ -185,10 +185,10 @@ const dict = {
   }
 }
 
-const LanguageContext = createContext({ lang: 'zh', setLang: () => {}, t: (k) => k })
+const LanguageContext = createContext({ lang: 'en', setLang: () => {}, t: (k) => k })
 
 export function LanguageProvider({ children }) {
-  const [lang, setLang] = useState('zh')
+  const [lang, setLang] = useState('en')
   const t = (key) => (dict[lang] && dict[lang][key]) ?? dict.zh[key] ?? key
   return (
     <LanguageContext.Provider value={{ lang, setLang, t }}>
